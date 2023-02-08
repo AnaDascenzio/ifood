@@ -1,0 +1,23 @@
+[
+  {
+    "dataAtualizacao": "2023-01-25Z",
+    "dataCriacao": "2023-01-25Z",
+    "id": 5,
+    "nome": "novo restaurante tres",
+    "proprietario": "string"
+  },
+  {
+    "dataAtualizacao": "2023-01-25Z",
+    "dataCriacao": "2023-01-25Z",
+    "id": 3,
+    "nome": "nome atualizado",
+    "proprietario": "string"
+  },
+  {
+    "dataAtualizacao": "2023-01-25Z",
+    "dataCriacao": "2023-01-25Z",
+    "id": 6,
+    "nome": "restaurante teste",
+    "proprietario": "string"
+  }
+]
