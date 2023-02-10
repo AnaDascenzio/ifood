@@ -1,6 +1,7 @@
 package ifood.cadastro;
 
 import groovy.json.JsonBuilder;
+import groovy.json.JsonGenerator;
 import ifood.cadastro.dto.AdicionarRestauranteDTO;
 import ifood.cadastro.dto.PratoMapper;
 import ifood.cadastro.dto.RestauranteMapper;
@@ -19,6 +20,9 @@ import org.eclipse.microprofile.reactive.messaging.Emitter;
 
 import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
+import javax.json.JsonObjectBuilder;
+import javax.json.bind.Jsonb;
+import javax.json.bind.JsonbBuilder;
 import javax.persistence.MapsId;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -66,7 +70,10 @@ public class RestauranteResource {
         restaurante.persist();
 
 
-        emitter.send(restaurante.toString());
+        Jsonb create = JsonbBuilder.create();
+        String json = create.toJson(restaurante);
+
+        emitter.send(json);
         return Response.status(Response.Status.CREATED).build();
     }
 
