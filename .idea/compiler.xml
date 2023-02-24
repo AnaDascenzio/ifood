@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="pedido" />
         <module name="marketplace" />
+        <module name="code-with-quarkus" />
       </profile>
       <profile name="Annotation profile for ifood" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -28,6 +29,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="cadastro" options="-Amapstruct.suppressGeneratorTimestamp=true -Amapstruct.suppressGeneratorVersionInfoComment=true -Amapstruct.verbose=true" />
+      <module name="code-with-quarkus" options="-parameters" />
       <module name="marketplace" options="-parameters" />
       <module name="pedido" options="" />
     </option>
