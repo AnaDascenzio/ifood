@@ -38,4 +38,10 @@ public class Prato {
                 }))
                 .onItem().transform(PratoDTO::from);
     }
+
+    public static Uni<PratoDTO> findById(PgPool client, Long id) {
+        return client.preparedQuery("SELECT * FROM prato WHERE id = $1").execute(Tuple.of(id))
+                .map(RowSet::iterator)
+                .map(iterator -> iterator.hasNext() ? PratoDTO.from(iterator.next()) : null);
+    }
 }
